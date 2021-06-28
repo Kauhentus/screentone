@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Drawer</title>
+		<link rel="stylesheet" href="./css/style.css">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+<body>
+
+<div id="outer-container">
+    <div id="displays-container">
+        <canvas id="main-display-canvas"></canvas>
+        <canvas id="zoom-display-canvas"></canvas>
+    </div>
+    
+    <div id="parameters-container">
+        <div class='item-row'>
+            <label>Dot Spacing</label>
+            <input value="20" id="dot-spacing" class="number-input" type="number">
+        </div>
+        
+        <div class='item-row'>
+            <label>Dot Size</label>
+            <input value="7" id="dot-size" class="number-input" type="number">
+        </div>
+
+        <div id='color-selection'>
+            <input type="radio" id="C" value="C" name="drone2" style="margin-top: 5vh;">
+            <label for="C">Open Dots</label>
+            <input value="D" id="D" name="drone2" type="radio" checked style="margin-left: 3vw;">
+            <label for="D">Filled Dots</label>
+        </div>
+
+        <div class='item-row'>
+            <label>Dot offset</label>
+            <input value="10" id="dot-offset" class="number-input" type="number">
+        </div>
+
+        <div id='color-selection'>
+            <input type="radio" id="A" value="A" name="drone" checked style="margin-top: 5vh;">
+            <label for="A">Normal</label>
+            <input value="B" id="B" name="drone" type="radio" style="margin-left: 3vw;">
+            <label for="B">Inverted</label>
+        </div>
+
+        <div class='item-row'>
+            <label>Trim Right End</label>
+            <input value="19" id="dot-trim-right" class="number-input" type="number">
+        </div>
+
+        <div class='item-row'>
+            <label>Trim Bottom End</label>
+            <input value="0" id="dot-trim-bottom" class="number-input" type="number">
+        </div>
+
+        <div id="button-row">
+            <button id="download-button">Download</button>
+        </div>
+    </div>
+
+    <div id="alignment-container">
+        <div id="alignment-item-container">
+            <label id="alignment-label">Top-Bottom Edge Alignment</label>
+            <canvas id="top-bottom-edges"></canvas>
+        </div>
+        
+        <div id="alignment-item-container">
+            <label id="alignment-label">Left-Right Edge Alignment</label>
+            <canvas id="left-right-edges"></canvas>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="./index.js"></script>
+</body>
+</html>

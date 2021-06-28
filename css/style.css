@@ -1,0 +1,100 @@
+canvas {
+    border: 1px solid darkgray;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#outer-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#displays-container {
+    width: 30%;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid darkgray;
+}
+
+#alignment-container {
+    width: 30%;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    border: 1px solid darkgray;
+}
+
+#alignment-item-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#alignment-label {
+    margin-bottom: 1vh;
+}
+
+#zoom-display-canvas {
+    margin-top: 5vh;
+}
+
+#parameters-container {
+    width: 40%;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid darkgray;
+}
+
+.item-row {
+    margin-top: 5vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+}
+
+.number-input {
+    width: 50%;
+    font-size: 1.5em;
+}
+
+button {
+    margin-top: 5vh;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+}
+
+#color-selection {
+
+}
