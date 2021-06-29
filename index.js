@@ -335,7 +335,23 @@ dotSelectFiled.onchange = () => {
 
 
 const downloadCanvas = () => {
-    const dataURL = mainDisplayCanvas.toDataURL();
+    const tempCanvas = document.createElement('canvas');
+    const tctctx = tempCanvas.getContext('2d');
+    tempCanvas.width = mainDisplayCanvas.width;
+    tempCanvas.height = mainDisplayCanvas.height;
+    const tempImageData = mctx.getImageData(0, 0, mainDisplayCanvas.width, mainDisplayCanvas.height);
+    tctctx.putImageData(tempImageData, 0, 0);
+
+    for(let x = 0; x < mainDisplayCanvas.width; x++){
+        for(let y = 0; y < mainDisplayCanvas.height; y++){
+            const cc = tctctx.getImageData(x, y, 1, 1).data;
+            if(cc[0] == 255 && cc[1] == 255 && cc[2] == 255){
+                tctctx.clearRect(x, y, 1, 1);
+            }
+        }
+    }
+
+    const dataURL = tempCanvas.toDataURL();
     const downloadLink = document.createElement('a');
     downloadLink.href = dataURL;
     downloadLink.download = 'myImage.png';
