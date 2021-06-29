@@ -11,6 +11,47 @@ input {
     font-family: 'Courier New', Courier, monospace;
 }
 
+#maximize-window {
+    position: absolute;
+    left: calc(50% - 30vw);
+    top: calc(50% - 30vh);
+    z-index: 3;
+
+    width: 60vw;
+    height: 60vh;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    border: 1px solid darkgray;
+    border-radius: 5px;
+
+    visibility: hidden;
+}
+
+#maximize-text {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 20px;
+}
+
+#browser-shadow {
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, .7);
+
+    visibility: hidden;
+}
+
 #outer-container {
     width: 100%;
     height: 100%;

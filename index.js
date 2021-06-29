@@ -6,6 +6,29 @@ let filledDots = true;
 let trimRight = 19;
 let trimBottom = 0;
 
+const visibilityCheck = () => {
+    https://stackoverflow.com/questions/49003290/detect-if-browser-window-is-maximized-and-at-default-100-zoom
+    var isAtMaxWidth = screen.availWidth - window.innerWidth < 100;
+    // var screenPixelRatio = (window.outerWidth - 8) / window.innerWidth;
+    // var isAtDefaultZoom = screenPixelRatio > 0.92 && screenPixelRatio <= 1.10;
+    // var isMaximizedAndDefaultZoom = isAtMaxWidth && isAtDefaultZoom;
+
+    let visibility = !isAtMaxWidth ? 'visible' : 'hidden';
+    console.log(isAtMaxWidth, visibility);
+    
+    document.getElementById('maximize-window').style.visibility = visibility;
+    document.getElementById('browser-shadow').style.visibility = visibility;
+    
+    return isAtMaxWidth;
+}
+visibilityCheck();
+
+const resizeObserver = new ResizeObserver(entries => {
+    visibilityCheck();
+    console.log("!!")
+});
+resizeObserver.observe(document.body);
+
 /** @type {HTMLCanvasElement} */
 const mainDisplayCanvas = document.getElementById('main-display-canvas');
 /** @type {CanvasRenderingContext2D} */
