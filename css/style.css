@@ -5,6 +5,8 @@ canvas {
 body {
     width: 100%;
     height: 100%;
+
+    overflow: hidden;
 }
 
 input {
@@ -50,6 +52,12 @@ input {
     background-color: rgba(0, 0, 0, .7);
 
     visibility: hidden;
+}
+
+#copyright {
+    position: absolute;
+    bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #outer-container {
@@ -100,7 +108,7 @@ input {
 }
 
 #parameters-container {
-    width: 40%;
+    width: 38%;
     height: 90vh;
 
     display: flex;
